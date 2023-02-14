@@ -67,7 +67,7 @@ textarea {
   border: none;
   padding: 10px 15px;
   font-size: 1rem;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .btn.btn-dark {
@@ -75,7 +75,7 @@ textarea {
   border-radius: 0;
 }
 
-.btn.btn-outline{
+.btn.btn-outline {
   background-color: transparent;
   border-radius: 0;
   color: #000;
@@ -83,27 +83,53 @@ textarea {
   padding: 7px 30px;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #0f730c;
   color: #fff;
 }
 
-.btn.btn-outline:hover{
+.btn.btn-outline:hover {
   background-color: #000;
 }
 
-.btn.btn-danger:hover{
-  background-color: #DC3545;
+.btn.btn-danger:hover {
+  background-color: #dc3545;
 }
 
-button[disable]{
+button[disable] {
   background-color: #aaa;
 }
 
-.container .error{
+.container .error {
   color: #721c24;
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
   padding: 5px;
   border-radius: 5px;
+}
+
+/* Loader */
+
+.container-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(5);
+}
+
+.loader {
+  margin-top: 20px;
+  animation: is-rotating 1s infinite;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border-top-color: #51d4db;
+  display: block;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
 }
