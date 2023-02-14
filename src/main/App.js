@@ -1,9 +1,11 @@
 import "./App.css";
+import "font-awesome/css/font-awesome.min.css";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
