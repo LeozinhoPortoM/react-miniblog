@@ -10,13 +10,11 @@ export default function Navbar() {
         <Logo />
       </Link>
 
-      <div className="search">
-        <input type="search" name="search" />
-      </div>
-
       <div className="links">
         <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/about"}>About</NavLink>
+        <NavLink to={"/login"}>Entrar</NavLink>
+        <NavLink to={"/register"}>Registrar</NavLink>
+        <NavLink to={"/about"}>Sobre</NavLink>
       </div>
     </nav>
   );
