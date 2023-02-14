@@ -1,9 +1,16 @@
 import "./style.css";
-
-import { Link, NavLink } from "react-router-dom";
 import Logo from "../Logo";
 
+import { Fragment } from "react";
+import { Link, NavLink } from "react-router-dom";
+
+import { useAuthentication } from "../../hooks/useAuthentication";
+
+import { useAuthValue } from "../../context/AuthContext";
+
 export default function Navbar() {
+  const { user } = useAuthValue();
+
   return (
     <nav>
       <Link to={"/"}>
@@ -12,8 +19,18 @@ export default function Navbar() {
 
       <div className="links">
         <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/login"}>Entrar</NavLink>
-        <NavLink to={"/register"}>Registrar</NavLink>
+        {!user && (
+          <Fragment>
+            <NavLink to={"/login"}>Entrar</NavLink>
+            <NavLink to={"/register"}>Registrar</NavLink>
+          </Fragment>
+        )}
+        {user && (
+          <Fragment>
+            <NavLink to={"/posts/create"}>Novo post</NavLink>
+            <NavLink to={"/dashboard"}>Dashboard</NavLink>
+          </Fragment>
+        )}
         <NavLink to={"/about"}>Sobre</NavLink>
       </div>
     </nav>
