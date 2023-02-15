@@ -41,6 +41,7 @@ export default function Login() {
       <p>Faça o login para utilizar o sistema</p>
       <form onSubmit={handleSubmit}>
         <label>
+          <span>E-mail:</span>
           <input
             type="email"
             name="email"
@@ -51,6 +52,7 @@ export default function Login() {
           />
         </label>
         <label>
+          <span>Senha:</span>
           <input
             type="password"
             name="password"

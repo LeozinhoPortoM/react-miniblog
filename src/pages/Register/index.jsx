@@ -51,6 +51,7 @@ export default function Register() {
       <p>Crie seu usuário e compartilhe suas histórias</p>
       <form onSubmit={handleSubmit}>
         <label>
+          <span>Nome:</span>
           <input
             type="text"
             name="displayName"
@@ -61,6 +62,7 @@ export default function Register() {
           />
         </label>
         <label>
+          <span>E-mail:</span>
           <input
             type="email"
             name="email"
@@ -71,6 +73,7 @@ export default function Register() {
           />
         </label>
         <label>
+          <span>Senha:</span>
           <input
             type="password"
             name="password"
@@ -81,6 +84,7 @@ export default function Register() {
           />
         </label>
         <label>
+          <span>Confirme sua senha:</span>
           <input
             type="password"
             name="confirmPassword"
