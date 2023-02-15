@@ -20,21 +20,8 @@ textarea:focus {
   outline: none;
 }
 
-a,
-nav button {
+a {
   text-decoration: none;
-  background-color: transparent;
-  border: none;
-  color: #000;
-  transition: 0.4s;
-  font-size: 1rem;
-  cursor: pointer;
-  font-family: "Montserrat" sans-serif;
-}
-
-a:hover,
-nav button:hover {
-  color: #bbb;
 }
 
 form {
@@ -62,12 +49,12 @@ textarea {
   text-align: center;
   cursor: pointer;
   border-radius: 10px;
-  /* width: 120px; */
   font-weight: bold;
   border: none;
   padding: 10px 15px;
   font-size: 1rem;
   margin: 10px 0;
+  transition: 0.4s;
 }
 
 .btn.btn-dark {
