@@ -1,0 +1,9 @@
+.login{
+    width: 50%;
+    text-align: center;
+}
+
+.login p {
+    color: #aaa;
+    margin: 10px 0;
+}
