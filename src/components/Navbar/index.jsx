@@ -10,6 +10,7 @@ import { useAuthValue } from "../../context/AuthContext";
 
 export default function Navbar() {
   const { user } = useAuthValue();
+  const { logout } = useAuthentication();
 
   return (
     <nav>
@@ -32,6 +33,7 @@ export default function Navbar() {
           </Fragment>
         )}
         <NavLink to={"/about"}>Sobre</NavLink>
+        {user && <Link onClick={logout}>Sair</Link>}
       </div>
     </nav>
   );
