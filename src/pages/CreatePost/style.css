@@ -1,0 +1,13 @@
+.create_post {
+  width: 50%;
+  text-align: center;
+}
+
+.create_post h2 {
+  font-size: 2.2rem;
+}
+
+.create_post p {
+  color: #aaa;
+  margin: 10px 0 20px;
+}
