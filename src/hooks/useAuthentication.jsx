@@ -58,11 +58,41 @@ export const useAuthentication = () => {
       } else if (error.message.includes("email-already")) {
         systemErrorMessage = "E-mail já cadastrado.";
       } else {
-        systemErrorMessage = "Ocorreu erro, por favor tente mais tarde.";
+        toast.error("Ocorreu erro, por favor tente mais tarde.");
       }
 
       setLoading(false);
       setError(systemErrorMessage);
+    }
+  };
+
+  const logout = () => {
+    checkIfIsCancelled();
+    signOut(auth);
+  };
+
+  const login = async (data) => {
+    checkIfIsCancelled();
+
+    setLoading(true);
+    setError(false);
+
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      setLoading(false);
+    } catch (error) {
+      let systemErrorMessage;
+
+      if (error.message.includes("user-not-found")) {
+        systemErrorMessage = "Usuário não encontrado.";
+      } else if (error.message.includes("wrong-password")) {
+        systemErrorMessage = "Senha incorreta.";
+      } else {
+        toast.error("Ocorreu um erro, por favor tente mais tarde.");
+      }
+
+      setError(systemErrorMessage);
+      setLoading(false);
     }
   };
 
@@ -75,5 +105,7 @@ export const useAuthentication = () => {
     createUser,
     error,
     loading,
+    logout,
+    login,
   };
 };
