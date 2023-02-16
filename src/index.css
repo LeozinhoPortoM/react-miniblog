@@ -29,10 +29,11 @@ form {
   margin: 0 auto;
   padding: 15px;
   background-color: rgba(134, 194, 222, 0.09);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 5px;
 }
 
-form span{
+form span {
   text-align: left;
   font-weight: bolder;
 }
@@ -40,11 +41,42 @@ form span{
 label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1px;
+  position: relative;
+}
+
+
+/* Animation with inputs and textarea */
+
+label span {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  color: rgb(150, 150, 150);
+  transition: 0.5s ease-in-out;
+}
+
+label input:focus,
+label textarea:focus,
+label input:valid,
+label textarea:valid {
+  border-bottom: 2px solid cornflowerblue;
+}
+
+label input:focus ~ span,
+label textarea:focus ~ span,
+label input:valid ~ span,
+label textarea:valid ~ span {
+  transform: translateY(-24px);
+  font-size: 0.8rem;
+  color: cornflowerblue;
+}
+label textarea:focus ~ span, label textarea:valid ~ span {
+  transform: translateY(-32px);
 }
 
 input,
 textarea {
+  font-size: 0.9rem;
   border: none;
   border-bottom: 1px solid #ccc;
   padding: 0.5rem 0;
@@ -52,8 +84,16 @@ textarea {
   background-color: transparent;
 }
 
+textarea {
+  padding: 0;
+  margin-top: 5px;
+  resize: none;
+}
+
+/* Buttons */
+
 .btn {
-  background-color: #1a8918;
+  background-color: #51d4db;
   color: #fff;
   text-align: center;
   cursor: pointer;
@@ -80,7 +120,7 @@ textarea {
 }
 
 .btn:hover {
-  background-color: #0f730c;
+  background-color: #329ea3;
   color: #fff;
 }
 
@@ -104,7 +144,7 @@ button[disable] {
   border-radius: 5px;
 }
 
-/* Loader */
+/* Loader Animation */
 
 .container-loader {
   display: flex;
