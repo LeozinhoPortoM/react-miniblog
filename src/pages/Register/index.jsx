@@ -51,48 +51,44 @@ export default function Register() {
       <p>Crie seu usuário e compartilhe suas histórias</p>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Nome:</span>
           <input
             type="text"
             name="displayName"
             value={displayName}
             required
-            placeholder="Nome do usuário"
             onChange={(e) => setDisplayName(e.target.value)}
           />
+          <span>Nome:</span>
         </label>
         <label>
-          <span>E-mail:</span>
           <input
             type="email"
             name="email"
             value={email}
             required
-            placeholder="E-mail do usuário"
             onChange={(e) => setEmail(e.target.value)}
           />
+          <span>E-mail:</span>
         </label>
         <label>
-          <span>Senha:</span>
           <input
             type="password"
             name="password"
             value={password}
             required
-            placeholder="Insira sua senha"
             onChange={(e) => setPassword(e.target.value)}
           />
+          <span>Senha:</span>
         </label>
         <label>
-          <span>Confirme sua senha:</span>
           <input
             type="password"
             name="confirmPassword"
             value={confirmPassword}
             required
-            placeholder="Confirme sua senha"
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
+          <span>Confirme sua senha:</span>
         </label>
         {!loading && <button className="btn">Cadastrar</button>}
         {loading && (

@@ -41,26 +41,24 @@ export default function Login() {
       <p>Faça o login para utilizar o sistema</p>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>E-mail:</span>
           <input
             type="email"
             name="email"
             value={email}
             required
-            placeholder="E-mail do usuário"
             onChange={(e) => setEmail(e.target.value)}
           />
+          <span>E-mail:</span>
         </label>
         <label>
-          <span>Senha:</span>
           <input
             type="password"
             name="password"
             value={password}
             required
-            placeholder="Insira sua senha"
             onChange={(e) => setPassword(e.target.value)}
           />
+          <span>Senha:</span>
         </label>
 
         {!loading && <button className="btn">Entrar</button>}

@@ -55,43 +55,43 @@ export default function CreatePost() {
       <p>Escreva o que quiser e compartilhe o seu conhecimento!</p>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Título:</span>
           <input
             type="text"
             name="text"
             value={title}
-            placeholder="Pense num bom título..."
+            required
             onChange={(e) => setTitle(e.target.value)}
           />
+          <span>Título:</span>
         </label>
         <label>
-          <span>Url da imagem:</span>
           <input
             type="text"
             name="image"
             value={image}
-            placeholder="Insira uma imagem que representa o seu post"
+            required
             onChange={(e) => setImage(e.target.value)}
           />
+          <span>Url da imagem:</span>
         </label>
         <label>
-          <span>Conteúdo:</span>
           <textarea
             name="body"
             value={body}
-            placeholder="Insira o conteúdo do post"
+            required
             onChange={(e) => setBody(e.target.value)}
           ></textarea>
+          <span>Conteúdo:</span>
         </label>
         <label>
-          <span>Tags:</span>
           <input
             type="text"
             name="tags"
             value={tags}
-            placeholder="Insira as tags separadas por vírgulas"
+            required
             onChange={(e) => setTags(e.target.value)}
           />
+          <span>Tags:</span>
         </label>
         {!response.loading && <button className="btn">Criar post!</button>}
         {response.loading && (
