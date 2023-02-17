@@ -3,9 +3,13 @@ import "./style.css";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 
+import { useFetchDocument } from "../../hooks/useFetchDocuments";
+
+import PostDetail from "../../components/PostDetail";
+
 export default function Home() {
   const [query, setQuery] = useState("");
-  const [posts] = useState([]);
+  const { documents: posts, loading } = useFetchDocument("posts");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +28,8 @@ export default function Home() {
       </form>
 
       <div>
-        <h1>Posts...</h1>
+        {loading && <p>Carregando...</p>}
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
           <div className="noposts">
             <p>Não foram encontrado posts</p>
