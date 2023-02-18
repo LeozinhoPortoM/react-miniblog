@@ -44,7 +44,6 @@ label {
   position: relative;
 }
 
-
 /* Animation with inputs and textarea */
 
 label span {
@@ -70,7 +69,8 @@ label textarea:valid ~ span {
   font-size: 0.8rem;
   color: cornflowerblue;
 }
-label textarea:focus ~ span, label textarea:valid ~ span {
+label textarea:focus ~ span,
+label textarea:valid ~ span {
   transform: translateY(-32px);
 }
 
@@ -92,7 +92,8 @@ textarea {
 
 /* Buttons */
 
-.btn {
+.btn,
+.btn_loader {
   background-color: #51d4db;
   color: #fff;
   text-align: center;
@@ -104,6 +105,10 @@ textarea {
   font-size: 1rem;
   margin: 10px 0;
   transition: 0.4s;
+}
+
+.btn_loader {
+  width: 50%;
 }
 
 .btn.btn-dark {
@@ -162,6 +167,22 @@ button[disable] {
   border: 1px solid transparent;
   border-top-color: #51d4db;
   display: block;
+}
+
+.ellipsis:after {
+  content: "\2026";
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  transform: translateX(-0.25em);
+  animation: ellipsis steps(5, end) 1.5s infinite;
+  width: 0;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 2em;
+  }
 }
 
 @keyframes is-rotating {
