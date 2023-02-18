@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
 
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import { useDeleteDocument } from "../../hooks/useDeleteDocument";
 
 export default function Dashboard() {
   const { user } = useAuthValue();
   const uid = user.id;
   const { documents: posts, loading } = useFetchDocuments("posts", null, uid);
 
-  const deleteDocument = (id) => {};
+  const { deleteDocument } = useDeleteDocument("posts");
 
   if (loading) {
     return (
@@ -38,25 +39,29 @@ export default function Dashboard() {
             <span>Título</span>
             <span>Ações</span>
           </div>
-          {posts && posts.map((post) => (
-            <div key={post.id} className="post_row">
-              <p>{post.title}</p>
-              <div>
-                <Link to={`/posts/${post.id}`} className="btn btn-outline">
-                  Ver
-                </Link>
-                <Link to={`/posts/edit/${post.id}`} className="btn btn-outline">
-                  Editar
-                </Link>
-                <button
-                  onClick={() => deleteDocument(post.id)}
-                  className="btn btn-outline btn-danger"
-                >
-                  Excluir
-                </button>
+          {posts &&
+            posts.map((post) => (
+              <div key={post.id} className="post_row">
+                <p>{post.title}</p>
+                <div>
+                  <Link to={`/posts/${post.id}`} className="btn btn-outline">
+                    Ver
+                  </Link>
+                  <Link
+                    to={`/posts/edit/${post.id}`}
+                    className="btn btn-outline"
+                  >
+                    Editar
+                  </Link>
+                  <button
+                    onClick={() => deleteDocument(post.id)}
+                    className="btn btn-outline btn-danger"
+                  >
+                    Excluir
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </>
       )}
     </div>
