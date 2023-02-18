@@ -11,10 +11,19 @@
   object-fit: cover;
 }
 
-.post_detail h2 {
+.post_detail__info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.post_detail__info h2 {
   margin: 0.4rem 0;
 }
-.post_detail .tags {
+.post_detail__info .tags {
   margin-bottom: 1.2rem;
   display: flex;
 }
