@@ -63,8 +63,8 @@ export default function Login() {
 
         {!loading && <button className="btn">Entrar</button>}
         {loading && (
-          <button className="btn" disabled>
-            Aguarde...
+          <button className="btn_loader ellipsis" disabled>
+            Aguarde
           </button>
         )}
         {error && <p className="error">{error}</p>}
